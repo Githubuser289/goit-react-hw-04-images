@@ -6,6 +6,7 @@ import Searchbar from './Searchbar/Searchbar';
 const IMAGES_PER_PAGE = 12;
 let areImages = false;
 let totalHits = 0;
+let param = 0;
 
 function App() {
   const [imagesData, setImagesData] = useState([]);
@@ -15,10 +16,10 @@ function App() {
 
   useEffect(() => {
     if (!query) return;
-    getImagesData();
-  }, [query, page, getImagesData]);
+    getImagesData(param);
+  }, [query, page, param]);
 
-  async function getImagesData() {
+  async function getImagesData(value) {
     let dataList = [];
     let flag = areImages;
     if (page === 1) flag = true;
