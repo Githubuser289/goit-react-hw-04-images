@@ -1,3 +1,4 @@
+import Loader from './Loader/Loader';
 import Searchbar from './Searchbar/Searchbar';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   return (
     <>
       <Searchbar submitCallback={handleSubmit} />
+      <Loader />
     </>
   );
 }
