@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     console.log('useeffect query=', query);
     if (query) getImagesData();
-  }, [query, page]);
+  }, [query, page, getImagesData]);
 
   async function getImagesData() {
     let dataList = [];
