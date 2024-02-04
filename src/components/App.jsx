@@ -14,8 +14,8 @@ function App() {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    console.log('useeffect query=', query);
-    if (query) getImagesData();
+    if (!query) return;
+    getImagesData();
   }, [query, page, getImagesData]);
 
   async function getImagesData() {
