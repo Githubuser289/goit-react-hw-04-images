@@ -1,18 +1,19 @@
-const App = () => {
+import Searchbar from './Searchbar/Searchbar';
+
+function App() {
+  const handleSubmit = evt => {
+    evt.preventDefault();
+    const txt = evt.target[1].value;
+    if (txt === '') return;
+
+    document.getElementsByTagName('form')[0].reset();
+  };
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
-      React homework
-    </div>
+    <>
+      <Searchbar submitCallback={handleSubmit} />
+    </>
   );
-};
+}
 
 export default App;
